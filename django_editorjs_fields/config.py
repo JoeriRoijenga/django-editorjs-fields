@@ -61,6 +61,7 @@ PLUGINS = getattr(
         '@editorjs/link',
         '@editorjs/marker',
         '@editorjs/table',
+        'gridview',
     )
 )
 
@@ -103,6 +104,7 @@ CONFIG_TOOLS = getattr(
         },
         'Marker': {'class': 'Marker', 'inlineToolbar': True},
         'Table': {'class': 'Table', 'inlineToolbar': True},
+        'Gridview': {'class': 'Gridview'},
     }
 )
 
@@ -121,5 +123,5 @@ PLUGINS_KEYS = {
     '@editorjs/link': 'LinkTool',
     '@editorjs/marker': 'Marker',
     '@editorjs/table': 'Table',
-    'inline-code': 'InlineCode',
+    'gridview': 'Gridview',
 }

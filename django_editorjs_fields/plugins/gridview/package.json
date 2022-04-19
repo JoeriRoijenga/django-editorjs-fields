@@ -1,25 +1,19 @@
 {
-  "name": "@editorjs/inline-code",
+  "name": "editorjs-gridview",
   "version": "1.3.1",
   "keywords": [
     "codex editor",
-    "inline",
+    "gridview",
     "code",
     "tool",
     "editor.js",
     "editorjs"
   ],
-  "description": "InlineCode Tool for Editor.js",
-  "license": "MIT",
-  "repository": "https://github.com/editor-js/inline-code",
+  "description": "Gridview Tool for Editor.js",
   "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development --watch"
-  },
-  "author": {
-    "name": "CodeX Team",
-    "email": "team@ifmo.su"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",

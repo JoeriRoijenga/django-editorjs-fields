@@ -48,9 +48,6 @@ class EditorJsWidget(widgets.Textarea):
                        for p in self.plugins or PLUGINS]
 
             for plugin in plugins:
-                # if path.exists("./static/" + plugin + "/bundle.js"):
-                #     print('exists!')
-                # else:
                 plugin_key = PLUGINS_KEYS.get(plugin)
 
                 if not plugin_key:
@@ -87,7 +84,6 @@ class EditorJsWidget(widgets.Textarea):
         plugins = self.plugins or PLUGINS
 
         if plugins:
-            print('plugins:')
             for plugin in plugins:
                 if path.exists("./static/" + plugin + "/bundle.js"):
                     js_list.append(plugin + '/bundle.js')
