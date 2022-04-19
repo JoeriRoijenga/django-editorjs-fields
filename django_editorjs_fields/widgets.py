@@ -1,5 +1,3 @@
-import json
-
 from django.core.serializers.json import DjangoJSONEncoder
 from django.forms import Media, widgets
 from django.forms.renderers import get_default_renderer
@@ -9,6 +7,8 @@ from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 
 from .config import CONFIG_TOOLS, PLUGINS, PLUGINS_KEYS, VERSION
+
+from os import path
 
 
 class LazyEncoder(DjangoJSONEncoder):
@@ -42,11 +42,15 @@ class EditorJsWidget(widgets.Textarea):
 
         if self.plugins or self.tools:
             custom_tools = self.tools or {}
+
             # get name packages without version
             plugins = ['@'.join(p.split('@')[:2])
                        for p in self.plugins or PLUGINS]
 
             for plugin in plugins:
+                # if path.exists("./static/" + plugin + "/bundle.js"):
+                #     print('exists!')
+                # else:
                 plugin_key = PLUGINS_KEYS.get(plugin)
 
                 if not plugin_key:
@@ -83,9 +87,15 @@ class EditorJsWidget(widgets.Textarea):
         plugins = self.plugins or PLUGINS
 
         if plugins:
-            js_list += ['//cdn.jsdelivr.net/npm/' + p for p in plugins]
+            print('plugins:')
+            for plugin in plugins:
+                if path.exists("./static/" + plugin + "/bundle.js"):
+                    js_list.append(plugin + '/bundle.js')
+                else:
+                    js_list.append('//cdn.jsdelivr.net/npm/' + plugin)
 
         js_list.append('django-editorjs-fields/js/django-editorjs-fields.js')
+        
 
         return Media(
             js=js_list,

@@ -121,4 +121,5 @@ PLUGINS_KEYS = {
     '@editorjs/link': 'LinkTool',
     '@editorjs/marker': 'Marker',
     '@editorjs/table': 'Table',
+    'inline-code': 'InlineCode',
 }
