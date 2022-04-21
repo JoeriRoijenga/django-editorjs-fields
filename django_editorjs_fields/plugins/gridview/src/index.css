@@ -1,1 +1,11 @@
-/* Not in use */
+.columns {
+    display: grid; 
+}
+
+.column {
+    padding: 0px 20px 0px 20px;
+}
+
+.codex-editor {
+    z-index: 0 !important;
+}

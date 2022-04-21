@@ -85,8 +85,9 @@ class EditorJsWidget(widgets.Textarea):
 
         if plugins:
             for plugin in plugins:
-                if path.exists("./static/" + plugin + "/bundle.js"):
-                    js_list.append(plugin + '/bundle.js')
+                if path.exists("./static/plugins/" + plugin + "/bundle.js"):
+                    print("./static/plugins/" + plugin + "/bundle.js")
+                    js_list.append('plugins/' + plugin + '/bundle.js')
                 else:
                     js_list.append('//cdn.jsdelivr.net/npm/' + plugin)
 

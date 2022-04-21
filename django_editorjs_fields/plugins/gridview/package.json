@@ -24,5 +24,9 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "@editorjs/editorjs": "^2.23.2",
+    "uuid": "^8.3.2"
   }
 }

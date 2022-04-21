@@ -11,3 +11,4 @@ __pycache__
 db.sqlite3
 
 **/node_modules/
+django_editorjs_fields/.DS_Store
